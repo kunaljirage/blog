@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$lightGray: #f6f8fa;
+$violet: #882bff;
+
+@import "./login.scss";
+@import "./components/navbar.scss";
+@import "./home.scss";
+@import "./components/footer.scss";
+@import "./components/buttons.scss";
+@import "./show-post.scss";
+// .app {
+//  
+// }
+
+.logo {
+    img {
+        width: 250px;
+    }
+}

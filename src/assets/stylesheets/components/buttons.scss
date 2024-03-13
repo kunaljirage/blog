@@ -1,0 +1,46 @@
+$primary-color: #30c060;
+$secondary-color: #000000;
+
+.button {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    @extend .button;
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    @extend .button;
+    color: #fff;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+}
+
+.btn-danger {
+}
+
+.btn-warning {
+}
+
+.btn-info {
+}
+
+.btn-light {
+}
+
+.btn-dark {
+}
