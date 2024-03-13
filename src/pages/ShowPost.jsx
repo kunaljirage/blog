@@ -15,7 +15,7 @@ const ShowPost = () => (
         <img
           src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
           alt=""
-          className="w-12 h-12 rounded-full object-cover"
+          className="profile-image"
         />
         <div>
           <span className="font-bold">kunal</span>

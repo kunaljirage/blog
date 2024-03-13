@@ -21,7 +21,7 @@ const Post = props => {
         <div className="date-author">
           <Link className="external author">
             {/* <img src="" alt="Author avatar" /> */}
-            <div className="default-profile">
+            <div className="profile-icon">
               <IoPerson size="24" />
             </div>
             {/* TestGrid */}

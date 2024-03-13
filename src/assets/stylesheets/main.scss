@@ -11,12 +11,26 @@ $violet: #882bff;
 @import "./components/footer.scss";
 @import "./components/buttons.scss";
 @import "./show-post.scss";
-// .app {
-//  
-// }
+@import "./write.scss";
 
 .logo {
     img {
         width: 250px;
     }
+}
+
+.profile-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+.profile-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }

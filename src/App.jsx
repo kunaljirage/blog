@@ -11,7 +11,9 @@ import ShowPost from './pages/ShowPost';
 const Layout = () => (
   <div className="app">
     <Navbar />
-    <Outlet />
+    <div className="min-h-[75vh]">
+      <Outlet />
+    </div>
     <Footer />
   </div>
 );
