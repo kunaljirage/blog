@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Edit from '../assets/images/edit.png';
 import Delete from '../assets/images/delete.png';
 import Menu from '../components/Menu';
+import Profile from '../components/Profile';
 
 const ShowPost = () => (
   <div className="show-post">
@@ -12,11 +13,7 @@ const ShowPost = () => (
         className="w-full h-80 object-cover"
       />
       <div className="flex align-middle gap-3 text-sm">
-        <img
-          src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
-          alt=""
-          className="profile-image"
-        />
+        <Profile />
         <div>
           <span className="font-bold">kunal</span>
           <p className="text-justify">posted 2 days ago</p>

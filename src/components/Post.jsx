@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { IoPerson } from 'react-icons/io5';
+import Profile from './Profile';
 
 const Post = props => {
   const {
@@ -20,10 +20,7 @@ const Post = props => {
         </h2>
         <div className="date-author">
           <Link className="external author">
-            {/* <img src="" alt="Author avatar" /> */}
-            <div className="profile-icon">
-              <IoPerson size="24" />
-            </div>
+            <Profile />
             {/* TestGrid */}
           </Link>
           <time className="date">{createdDate}</time>

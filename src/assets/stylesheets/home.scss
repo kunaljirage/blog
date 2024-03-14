@@ -3,7 +3,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 0px 40px;
-        margin:  40px 0px;
+        margin-top:  40px;
 
         .post {
             border: 1px solid #cdcdcd;
@@ -12,6 +12,8 @@
             grid-row: span 6;
             grid-template-rows: subgrid;
             padding: 32px;
+            margin-bottom: 40px;
+
 
             header {
                 .title {
@@ -42,14 +44,6 @@
                             background-color: lightGray;
                             color: #fff;
                           
-                        }
-                        img {
-                            border: none!important;
-                            border-radius: 3rem;
-                            height: 20px;
-                            margin: 0;
-                            object-fit: cover;
-                            width: 20px;
                         }
                     }
                 }

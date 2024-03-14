@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/dark_logo.png';
-import { IoPerson } from 'react-icons/io5';
+import Profile from './Profile';
 
 const Navbar = () => (
   <nav className="navbar">
@@ -30,9 +30,7 @@ const Navbar = () => (
         <Link className="nav-link" to="write">
           Write
         </Link>
-        <span className="cursor-pointer m-auto profile-icon">
-          <IoPerson />
-        </span>
+        <Profile classes="cursor-pointer" />
         <span className="cursor-pointer m-auto btn-secondary p-1 text-[12px] font-semibold">
           Logout
         </span>

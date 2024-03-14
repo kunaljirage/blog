@@ -22,10 +22,12 @@ $violet: #882bff;
 .profile-icon {
     height: 40px;
     width: 40px;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
+    color:#566071;
+    background-color: #dee1e6;
 }   
 
 .profile-image {
