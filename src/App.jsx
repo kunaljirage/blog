@@ -1,52 +1,17 @@
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import './assets/stylesheets/main.scss';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Home from './pages/Home';
-import Write from './pages/Write';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import './assets/stylesheets/main.scss';
-import ShowPost from './pages/ShowPost';
+import RootRoutes from './RootRoutes';
 
-const Layout = () => (
-  <div className="app">
-    <Navbar />
-    <div className="min-h-[75vh]">
-      <Outlet />
-    </div>
-    <Footer />
-  </div>
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/*" element={<RootRoutes />} />
+      <Route path="/signin" element={<Login />} />
+      <Route path="/signup" element={<Register />} />
+    </Routes>
+  </BrowserRouter>
 );
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/post/:id',
-        element: <ShowPost />,
-      },
-      {
-        path: '/write',
-        element: <Write />,
-      },
-    ],
-  },
-  {
-    path: '/signin',
-    element: <Login />,
-  },
-  {
-    path: '/signup',
-    element: <Register />,
-  },
-]);
-
-const App = () => <RouterProvider router={router} />;
 
 export default App;
