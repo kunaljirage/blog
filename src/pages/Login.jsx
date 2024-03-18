@@ -3,6 +3,7 @@ import { PiArrowUpRightThin } from 'react-icons/pi';
 import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
   const { setAuth } = useAuth();
@@ -10,7 +11,14 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.form?.pathname || '/';
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+  };
   return (
     <div className="image">
       <div className="image-overlay" />
@@ -18,19 +26,20 @@ const Login = () => {
       <div className="auth-container">
         <div className="auth">
           <h1>Sign in</h1>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <input
-              required
+              {...register('email', { required: 'Email is required' })}
               type="text"
-              placeholder="Username"
-              name="username"
+              placeholder="Email"
+              autoComplete="off"
             />
+            <p>{errors.email?.message}</p>
             <input
-              required
+              {...register('password', { required: 'Password is required' })}
               type="password"
               placeholder="Password"
-              name="password"
             />
+            <p>{errors.password?.message}</p>
             <Button
               className="btn-primary p-2"
               text=" Sign in now"
