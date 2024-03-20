@@ -2,19 +2,30 @@ import { Link, useNavigate } from 'react-router-dom';
 import { PiArrowUpRightThin } from 'react-icons/pi';
 import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { registrUser } from '../helpers/authAxios';
+import { useState } from 'react';
+import { useAuth } from '../hooks/useAuth';
 
 const Register = () => {
-  const [user, setUser] = useState({ email: '', passwprd: '' });
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const { setAuth } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = data => console.log(data);
+  const onSubmit = data =>
+    registrUser(data).then(res => {
+      if (res.data) {
+        setAuth(res.data);
+        navigate('/');
+      } else {
+        setErrorMessage(res.error);
+      }
+    });
 
   return (
     <div className="image">
@@ -27,8 +38,6 @@ const Register = () => {
             <input
               {...register('name', {
                 required: 'Name is required',
-                maxLength: 30,
-                minLength: 2,
               })}
               type="text"
               placeholder="Name"

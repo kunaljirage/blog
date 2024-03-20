@@ -4,13 +4,13 @@ import Navbar from './components/Navbar';
 import { useAuth } from './hooks/useAuth';
 
 const Layout = () => {
-  const user = useAuth();
+  const { auth } = useAuth();
 
   return (
     <div className="app">
-      <Navbar user={user} />
+      <Navbar user={auth} />
       <div className="min-h-[75vh]">
-        <Outlet context={[user]} />
+        <Outlet context={[auth]} />
       </div>
       <Footer />
     </div>

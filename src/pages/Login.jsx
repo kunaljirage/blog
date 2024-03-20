@@ -1,23 +1,31 @@
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PiArrowUpRightThin } from 'react-icons/pi';
 import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 
-const Login = () => {
-  const { setAuth } = useAuth();
+import { loginUser } from '../helpers/authAxios';
+import { useState } from 'react';
 
+const Login = () => {
+  const [errorMessage, setErrorMessage] = useState(null);
+  const { auth, setAuth } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.form?.pathname || '/';
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = data => {
-    console.log(data);
+    loginUser(data).then(res => {
+      if (res.data) {
+        setAuth(res.data);
+        navigate('/');
+      } else {
+        setErrorMessage(res.error);
+      }
+    });
   };
   return (
     <div className="image">
@@ -26,9 +34,16 @@ const Login = () => {
       <div className="auth-container">
         <div className="auth">
           <h1>Sign in</h1>
+          <p>{errorMessage}</p>
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <input
-              {...register('email', { required: 'Email is required' })}
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                  message: 'Invalid email format',
+                },
+              })}
               type="text"
               placeholder="Email"
               autoComplete="off"
