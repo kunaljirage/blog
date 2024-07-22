@@ -7,7 +7,7 @@ const Home = () => {
       title: 'Modernizing conventional test automation with TestGrid',
       desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
       image_url:
-        'https://t4.ftcdn.net/jpg/00/65/70/65/360_F_65706597_uNm2SwlPIuNUDuMwo6stBd81e25Y8K8s.jpg',
+        'https://miro.medium.com/v2/resize:fit:1400/1*x0d41ns8PTQZz4a3VbMrBg.png',
       crated_date: '29 February 2024',
       read_time: '15 min',
       sponsored: true,
@@ -16,8 +16,7 @@ const Home = () => {
       id: 2,
       title: 'Modernizing conventional test automation with TestGrid',
       desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
-      image_url:
-        'https://t4.ftcdn.net/jpg/00/65/70/65/360_F_65706597_uNm2SwlPIuNUDuMwo6stBd81e25Y8K8s.jpg',
+      image_url: 'https://miro.medium.com/v2/0*L0rGdSfS3W0kytcU',
       crated_date: '29 February 2024',
       read_time: '15 min',
       sponsored: true,
@@ -27,7 +26,7 @@ const Home = () => {
       title: 'Modernizing conventional test automation with TestGrid',
       desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
       image_url:
-        'https://t4.ftcdn.net/jpg/00/65/70/65/360_F_65706597_uNm2SwlPIuNUDuMwo6stBd81e25Y8K8s.jpg',
+        'https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png',
       crated_date: '29 February 2024',
       read_time: '15 min',
       sponsored: true,
@@ -37,7 +36,7 @@ const Home = () => {
       title: 'Modernizing conventional test automation with TestGrid',
       desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
       image_url:
-        'https://t4.ftcdn.net/jpg/00/65/70/65/360_F_65706597_uNm2SwlPIuNUDuMwo6stBd81e25Y8K8s.jpg',
+        'https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh4jbiijckmk65al45e6x.jpg',
       crated_date: '29 February 2024',
       read_time: '15 min',
       sponsored: true,

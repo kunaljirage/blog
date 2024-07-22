@@ -2,7 +2,7 @@ import './assets/stylesheets/main.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import RootRoutes from './RootRoutes';
+import RootRoutes from './routes/RootRoutes';
 
 const App = () => (
   <BrowserRouter>

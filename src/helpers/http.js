@@ -5,24 +5,24 @@ const DEFAULT_CONFIG = {
   silent: false,
   useApiNameSpace: true,
   handleCustomError: false,
+  authRequired: true,
   headers: {},
   data: {},
 };
 
 axios.defaults.baseURL = 'http://localhost:3001';
 
-// axios.interceptors.request.use(
-//   config => {
-//     if (!config.headers.Authorization) {
-//       config.headers.Authorization = `Bearer ${authContext.getAccessToken()}`;
-//     }
+axios.interceptors.response.use(response => {
+  const accessToken = response.headers['authorization']?.replace('Bearer ', '');
 
-//     return config;
-//   },
-//   error => {
-//     return Promise.reject(error);
-//   },
-// );
+  if (accessToken) {
+    localStorage.setItem('access_token', accessToken);
+  }
+
+  return response;
+});
+
+const getAuthToken = () => localStorage.getItem('access_token');
 
 const http = async (method = 'get', userConfig = {}) => {
   const config = {
@@ -30,12 +30,13 @@ const http = async (method = 'get', userConfig = {}) => {
     ...userConfig,
   };
 
-  const { headers, data } = config;
+  const { headers, data, authRequired } = config;
   const paramsKey = method === 'get' ? 'params' : 'data';
   const { url } = config;
   const requestHeaders = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
+    ...(authRequired ? { authorization: getAuthToken() } : {}),
     ...headers,
   };
 

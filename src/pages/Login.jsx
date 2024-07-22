@@ -4,9 +4,8 @@ import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
 import { useForm } from 'react-hook-form';
-
-import { loginUser } from '../helpers/authAxios';
 import { useState } from 'react';
+import { postRequest } from '../helpers/http';
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState(null);
@@ -18,7 +17,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = data => {
-    loginUser(data).then(res => {
+    postRequest({ url: '/signin', data: { user: { ...data } } }).then(res => {
       if (res.data) {
         setAuth(res.data);
         navigate('/');

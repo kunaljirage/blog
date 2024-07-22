@@ -3,9 +3,9 @@ import { PiArrowUpRightThin } from 'react-icons/pi';
 import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
 import { useForm } from 'react-hook-form';
-import { registrUser } from '../helpers/authAxios';
 import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { postRequest } from '../helpers/http';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = data =>
-    registrUser(data).then(res => {
+    postRequest({ url: '/signup', data: { user: { ...data } } }).then(res => {
       if (res.data) {
         setAuth(res.data);
         navigate('/');
