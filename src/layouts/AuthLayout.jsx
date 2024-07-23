@@ -1,7 +1,7 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
-const RequireAuth = () => {
+const AuthLayout = () => {
   const auth = useAuth();
   const location = useLocation();
   return auth?.user ? (
@@ -11,4 +11,4 @@ const RequireAuth = () => {
   );
 };
 
-export default RequireAuth;
+export default AuthLayout;
