@@ -44,7 +44,7 @@
         form {
             display: flex;
             flex-direction: column;
-            padding: 20px;
+            margin: 10px 30px 30px;
             width: 400px;
 
             label {
@@ -65,14 +65,14 @@
             }
 
             p {
-                font-size: 12px;
+                font-size: 14px;
                 color: rgba(255, 255, 255, 0.814);
                 margin-bottom: 40px;
                 margin-top: 10px;
             }
 
             span {
-                font-size: 12px;
+                font-size: 14px;
                 text-align: center;
                 color: white;
             }

@@ -11,17 +11,6 @@ const DEFAULT_CONFIG = {
 };
 
 axios.defaults.baseURL = 'http://localhost:3001';
-
-axios.interceptors.response.use(response => {
-  const accessToken = response.headers['authorization']?.replace('Bearer ', '');
-
-  if (accessToken) {
-    localStorage.setItem('access_token', accessToken);
-  }
-
-  return response;
-});
-
 const getAuthToken = () => localStorage.getItem('access_token');
 
 const http = async (method = 'get', userConfig = {}) => {
@@ -48,19 +37,11 @@ const http = async (method = 'get', userConfig = {}) => {
       [paramsKey]: data,
     });
 
-    const { data: responseData } = response;
-    if (responseData) {
-      return responseData;
-    }
+    return response.data;
   } catch (error) {
     const { response } = error;
 
-    if (response && response.status) {
-      const { data: responseData } = response;
-      if (responseData) {
-        return responseData;
-      }
-    }
+    return response.data;
   }
 };
 

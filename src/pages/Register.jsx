@@ -4,13 +4,11 @@ import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { postRequest } from '../helpers/http';
+import { authRequest } from '../helpers/authInstance';
 
 const Register = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
-  const { setAuth } = useAuth();
   const {
     register,
     handleSubmit,
@@ -18,12 +16,14 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = data =>
-    postRequest({ url: '/signup', data: { user: { ...data } } }).then(res => {
+    authRequest('/signup', { user: { ...data } }).then(res => {
       if (res.data) {
-        setAuth(res.data);
         navigate('/');
       } else {
-        setErrorMessage(res.error);
+        setErrorMessage(res.message);
+        setTimeout(() => {
+          setErrorMessage(null);
+        }, 5000);
       }
     });
 
@@ -67,10 +67,11 @@ const Register = () => {
               type="password"
               placeholder="Password"
             />
-            <p>{errors.password?.message}</p>
-
+            <p>
+              {errors.password?.message} {errorMessage && errorMessage}
+            </p>
             <Button
-              className="button btn-primary p-2"
+              className="button btn-primary p-2 mb-3"
               text=" Sign up"
               type="submit"
             />

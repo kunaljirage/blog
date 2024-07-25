@@ -2,14 +2,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { PiArrowUpRightThin } from 'react-icons/pi';
 import Logo from '../assets/images/white_logo.png';
 import Button from '../components/Button';
-import { useAuth } from '../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { postRequest } from '../helpers/http';
+import { authRequest } from '../helpers/authInstance';
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState(null);
-  const { auth, setAuth } = useAuth();
   const navigate = useNavigate();
   const {
     register,
@@ -17,12 +15,14 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = data => {
-    postRequest({ url: '/signin', data: { user: { ...data } } }).then(res => {
+    authRequest('/signin', { user: { ...data } }).then(res => {
       if (res.data) {
-        setAuth(res.data);
         navigate('/');
       } else {
-        setErrorMessage(res.error);
+        setErrorMessage(res.message);
+        setTimeout(() => {
+          setErrorMessage(null);
+        }, 5000);
       }
     });
   };
@@ -53,14 +53,16 @@ const Login = () => {
               type="password"
               placeholder="Password"
             />
-            <p>{errors.password?.message}</p>
+            <p>
+              {errors.password?.message} {errorMessage && errorMessage}
+            </p>
             <Button
               className="btn-primary p-2"
               text=" Sign in now"
               type="submit"
             />
             <p style={{ display: 'none' }}>This is an error!</p>
-            <span>
+            <span className="mt-3">
               Already have an account?{' '}
               <Link to="/signup" className="inline-flex justify-center">
                 Sign up{' '}

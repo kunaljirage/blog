@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Notification from '../components/Notification';
 
-const RootLayout = () => (
+const PublicRoutes = () => (
   <div className="app">
     <Navbar />
     <Notification />
@@ -14,4 +14,4 @@ const RootLayout = () => (
   </div>
 );
 
-export default RootLayout;
+export default PublicRoutes;
