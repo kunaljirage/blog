@@ -3,6 +3,7 @@ import Profile from './Profile';
 
 const Post = props => {
   const {
+    id,
     image_url: imageUrl,
     title,
     desc,
@@ -21,7 +22,6 @@ const Post = props => {
         <div className="date-author">
           <Link className="external author">
             <Profile />
-            {/* TestGrid */}
           </Link>
           <time className="date">{createdDate}</time>
           <span className="read-time">{readTime}</span>
@@ -30,7 +30,7 @@ const Post = props => {
       <p className="mt-5 mb-9">{desc}</p>
       <div className="flex justify-between">
         <span className="my-auto">Sponsored</span>
-        <Link className="btn-secondary p-1 trxt-[10px]">
+        <Link to={`/post/${id}`} className="btn-secondary p-1 trxt-[10px]">
           <span>Read more →</span>
         </Link>
       </div>

@@ -1,55 +1,45 @@
-import Post from '../components/Post';
+import { IoSearchOutline } from 'react-icons/io5';
+import PostCard from '../components/PostCard';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-  const posts = [
-    {
-      id: 1,
-      title: 'Modernizing conventional test automation with TestGrid',
-      desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
-      image_url:
-        'https://miro.medium.com/v2/resize:fit:1400/1*x0d41ns8PTQZz4a3VbMrBg.png',
-      crated_date: '29 February 2024',
-      read_time: '15 min',
-      sponsored: true,
-    },
-    {
-      id: 2,
-      title: 'Modernizing conventional test automation with TestGrid',
-      desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
-      image_url: 'https://miro.medium.com/v2/0*L0rGdSfS3W0kytcU',
-      crated_date: '29 February 2024',
-      read_time: '15 min',
-      sponsored: true,
-    },
-    {
-      id: 3,
-      title: 'Modernizing conventional test automation with TestGrid',
-      desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
-      image_url:
-        'https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png',
-      crated_date: '29 February 2024',
-      read_time: '15 min',
-      sponsored: true,
-    },
-    {
-      id: 4,
-      title: 'Modernizing conventional test automation with TestGrid',
-      desc: "This post reflects on the conventional test automation methods using Selenium and Appium. Learn how you can use TestGrid's unified testing platform to enhance the conventional methods and also leverage the modern codeless testing techniques.",
-      image_url:
-        'https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh4jbiijckmk65al45e6x.jpg',
-      crated_date: '29 February 2024',
-      read_time: '15 min',
-      sponsored: true,
-    },
-  ];
-
-  return (
-    <div className="posts">
-      {posts.map(post => (
-        <Post key={post.id} {...post} />
-      ))}
+const Home = () => (
+  <div>
+    <div className="dashboard">
+      <div className="dashboard-overlay">
+        <div className="flex flex-col justify-center items-center h-[80%]">
+          <h4 className="text-white mb-3 text-[25px] uppercase dashboard-nav">
+            how to become an amazing designer and developer
+          </h4>
+          <div className="w-[70%] text-center">
+            <h1 className="text-white text-[50px] uppercase">
+              Thriving Industry of User Experience Design and Development
+            </h1>
+          </div>
+        </div>
+      </div>
     </div>
-  );
-};
+    <div className="content-wrapper w-[964px] mx-auto">
+      <div className="flex justify-between p-8">
+        <div className="h-4/6">
+          <Link className="mr-8 cursor-pointer text-gray-600" to="/posts">
+            All Posts
+          </Link>
+          <span className="mr-8 cursor-pointer text-gray-600">Web Design</span>
+          <span className="mr-8 cursor-pointer text-gray-600">UX / UI</span>
+          <span className="mr-8 cursor-pointer text-gray-600">Devops</span>
+        </div>
+        <div>
+          <IoSearchOutline size={25} />
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-8">
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+      </div>
+    </div>
+  </div>
+);
 
 export default Home;

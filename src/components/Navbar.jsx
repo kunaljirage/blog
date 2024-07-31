@@ -5,7 +5,7 @@ import Profile from './Profile';
 const Navbar = ({ user }) => {
   const buttonOptions = user
     ? { text: 'Logout', url: 'user/logout' }
-    : { text: 'Sign in', url: 'user/signin' };
+    : { text: 'Log in / Sign up', url: 'user/signin' };
 
   return (
     <nav className="navbar">
@@ -15,30 +15,17 @@ const Navbar = ({ user }) => {
         </div>
         <div className="flex align-middle justify-center gap-4">
           <Link className="nav-link" to="">
-            <h6> Art </h6>
+            <h6> Subscribe </h6>
           </Link>
           <Link className="nav-link" to="">
-            <h6> Science </h6>
-          </Link>
-          <Link className="nav-link" to="">
-            <h6> Techology </h6>
-          </Link>
-          <Link className="nav-link" to="">
-            <h6> Cinema </h6>
-          </Link>
-          <Link className="nav-link" to="">
-            <h6> Design </h6>
-          </Link>
-          <Link className="nav-link" to="">
-            <h6> Food </h6>
-          </Link>
-          <Link className="nav-link" to="write">
-            Write
+            <h6> Contact </h6>
           </Link>
           <Profile classes="cursor-pointer" source={user?.source} />
-          <span className="cursor-pointer m-auto btn-secondary p-1 text-[12px] font-semibold">
-            {buttonOptions.text}
-          </span>
+          <button className="border border-[rgb(90,101,159)]">
+            <span className="cursor-pointer px-4 text-[16px] text-[rgb(90,101,159)]">
+              {buttonOptions.text}
+            </span>
+          </button>
         </div>
       </div>
     </nav>

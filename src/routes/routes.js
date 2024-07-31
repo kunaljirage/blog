@@ -1,5 +1,6 @@
 import Home from '../pages/Home';
-import ShowPost from '../pages/ShowPost';
+import Posts from '../pages/Posts';
+import Post from '../pages/Post';
 import Write from '../pages/Write';
 
 export const publicRoutes = [
@@ -8,8 +9,12 @@ export const publicRoutes = [
     component: Home,
   },
   {
+    path: '/posts',
+    component: Posts,
+  },
+  {
     path: '/post/:id',
-    component: ShowPost,
+    component: Post,
   },
 ];
 

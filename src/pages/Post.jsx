@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import Edit from '../assets/images/edit.png';
 import Delete from '../assets/images/delete.png';
-import Menu from '../components/Menu';
 import Profile from '../components/Profile';
 
-const ShowPost = () => (
+const Post = () => (
   <div className="show-post">
     <div className="content">
       <img
@@ -42,11 +41,28 @@ const ShowPost = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
         pariatur corporis nisi, dolorum id impedit, odit obcaecati laboriosam
         reprehenderit est facilis. Sunt minus nemo odio, quibusdam laborum atque
-        sapiente a.
+        sapiente a. We recommend reading this tutorial, in the sequence listed
+        in the menu. If you have a large screen, the menu will always be present
+        on the left. If you have a small screen, open the menu by clicking the
+        top menu sign. We recommend reading this tutorial, in the sequence
+        listed in the menu. If you have a large screen, the menu will always be
+        present on the left. If you have a small screen, open the menu by
+        clicking the top menu sign We recommend reading this tutorial, in the
+        sequence listed in the menu. If you have a large screen, the menu will
+        always be present on the left. If you have a small screen, open the menu
+        by clicking the top menu sign We recommend reading this tutorial, in the
+        sequence listed in the menu. If you have a large screen, the menu will
+        always be present on the left. If you have a small screen, open the menu
+        by clicking the top menu sign We recommend reading this tutorial, in the
+        sequence listed in the menu. If you have a large screen, the menu will
+        always be present on the left. If you have a small screen, open the menu
+        by clicking the top menu sign We recommend reading this tutorial, in the
+        sequence listed in the menu. If you have a large screen, the menu will
+        always be present on the left. If you have a small screen, open the menu
+        by clicking the top menu sign
       </p>
     </div>
-    <Menu />
   </div>
 );
 
-export default ShowPost;
+export default Post;

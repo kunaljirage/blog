@@ -26,14 +26,21 @@ const Menu = () => {
     },
   ];
   return (
-    <div className="menu flex-2">
-      <h1>other posts you may like</h1>
+    <div className="menu flex-2 border">
+      <h1 className="text-center text-[20px] text-[#333] font-medium">
+        Other Posts You May Like
+      </h1>
       {posts.map(post => (
-        <div className="post flex flex-col gap-3" key={post.id}>
-          <img className="w-full h-53" src={post.img} alt="" />
-          <div className="content">
+        <div
+          className="post flex flex-col gap-3 border-b border-b-slate-500"
+          key={post.id}
+        >
+          <div className="post-image">
+            <img className="h-full w-full" src={post.img} alt="" />
+          </div>
+          <div className="">
             <h2 className="text-xl text-[#555]">{post.title}</h2>
-            <button type="button">Read More</button>
+            {/* <button type="button">Read More</button> */}
           </div>
         </div>
       ))}
