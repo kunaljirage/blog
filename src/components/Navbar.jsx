@@ -5,7 +5,7 @@ import Profile from './Profile';
 const Navbar = ({ user }) => {
   const buttonOptions = user
     ? { text: 'Logout', url: 'user/logout' }
-    : { text: 'Log in / Sign up', url: 'user/signin' };
+    : { text: 'Log in / Sign up', url: '/login' };
 
   return (
     <nav className="navbar">
@@ -21,11 +21,11 @@ const Navbar = ({ user }) => {
             <h6> Contact </h6>
           </Link>
           <Profile classes="cursor-pointer" source={user?.source} />
-          <button className="border border-[rgb(90,101,159)]">
-            <span className="cursor-pointer px-4 text-[16px] text-[rgb(90,101,159)]">
+          <Link to="login">
+            <button className="border border-[#5A659F] px-4 py-2 text-[16px] text-[#5A659F]">
               {buttonOptions.text}
-            </span>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </nav>

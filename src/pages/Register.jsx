@@ -77,8 +77,8 @@ const Register = () => {
             />
             <span>
               Don't you have an account?{' '}
-              <Link className="inline-flex" to="/signin">
-                Sign in{' '}
+              <Link className="inline-flex" to="/login">
+                Login
                 <PiArrowUpRightThin
                   className="arrow-icon ml-[4px] mt-[3px]"
                   size="15"

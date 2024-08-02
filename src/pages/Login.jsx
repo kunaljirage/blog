@@ -32,7 +32,7 @@ const Login = () => {
       <img className="logo" src={Logo} alt="" />
       <div className="auth-container">
         <div className="auth">
-          <h1>Sign in</h1>
+          <h1>Login</h1>
           <p>{errorMessage}</p>
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <input
@@ -58,7 +58,7 @@ const Login = () => {
             </p>
             <Button
               className="btn-primary p-2"
-              text=" Sign in now"
+              text="Login now"
               type="submit"
             />
             <p style={{ display: 'none' }}>This is an error!</p>

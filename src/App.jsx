@@ -18,7 +18,7 @@ const router = createBrowserRouter(
     <>
       {/* AuthRoutes routes */}
       <Route element={<AuthRoutes />}>
-        <Route path="/signin" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
       </Route>
 
