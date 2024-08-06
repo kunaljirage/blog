@@ -14,10 +14,10 @@ const Navbar = ({ user }) => {
           <img src={Logo} alt="Logo" />
         </div>
         <div className="flex align-middle justify-center gap-4">
-          <Link className="nav-link" to="">
+          <Link className="nav-link" to="/subscribe">
             <h6> Subscribe </h6>
           </Link>
-          <Link className="nav-link" to="">
+          <Link className="nav-link" to="/contact">
             <h6> Contact </h6>
           </Link>
           <Profile classes="cursor-pointer" source={user?.source} />

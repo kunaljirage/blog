@@ -17,7 +17,7 @@ const Post = () => (
           <span className="font-bold">kunal</span>
           <p className="text-justify">posted 2 days ago</p>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-2 items-center">
           <Link to="/write?edit=2">
             <img
               className="w-5 h-5 object-cover cursor-pointer"
@@ -34,10 +34,10 @@ const Post = () => (
           </Link>
         </div>
       </div>
-      <h1 className="text-[42px] text-[#333] object-cover">
+      <h1 className="text-4xl text-[#333] object-cover">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus
       </h1>
-      <p className="text-justify leading-8">
+      <p className="text-justify leading-8 text-gray-600/75">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
         pariatur corporis nisi, dolorum id impedit, odit obcaecati laboriosam
         reprehenderit est facilis. Sunt minus nemo odio, quibusdam laborum atque

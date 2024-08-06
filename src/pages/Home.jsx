@@ -3,11 +3,11 @@ import PostCard from '../components/PostCard';
 import { Link } from 'react-router-dom';
 
 const Home = () => (
-  <div>
+  <div className="bg-[rgb(255 255 255)]">
     <div className="dashboard">
       <div className="dashboard-overlay">
         <div className="flex flex-col justify-center items-center h-[80%]">
-          <h4 className="text-white mb-3 text-[25px] uppercase dashboard-nav">
+          <h4 className="text-white mb-3 text-[25px] uppercase">
             how to become an amazing designer and developer
           </h4>
           <div className="w-[70%] text-center">
