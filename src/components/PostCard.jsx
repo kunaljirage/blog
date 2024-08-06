@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import Profile from './Profile';
 import { FaRegHeart } from 'react-icons/fa';
 
 const PostCard = () => (
-  <div className="flex flex-col w-[300px] mb-3 hover:shadow-2xl border">
+  <div className="flex bg-[rgb(255 255 255)] flex-col w-[300px] mb-3 hover:shadow-2xl border-2">
     <div>
       <img
         src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png"
@@ -18,17 +19,23 @@ const PostCard = () => (
         </div>
       </div>
       <div className="border-b-2 pb-[2px]">
-        <div className="text-2xl font-semibold overflow-hidden text-ellipsis line-clamp-3 mb-2">
+        <Link
+          to="post/1"
+          className="text-2xl font-semibold overflow-hidden text-ellipsis line-clamp-3 mb-2"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </div>
-        <div className="max-h-[200px] overflow-hidden text-ellipsis line-clamp-4">
+        </Link>
+        <Link
+          to="post/1"
+          className="max-h-[200px] overflow-hidden text-ellipsis line-clamp-4"
+        >
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
           five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged.
-        </div>
+        </Link>
       </div>
       <div className="flex justify-between mx-2 items-center">
         <div>

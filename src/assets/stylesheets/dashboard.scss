@@ -11,13 +11,12 @@
 }
 
 .dashboard-overlay {
-  content: "";
   display: block;
   height: calc(100vh - 63px) !important;
   width: 100%;
   background: linear-gradient(90deg, rgb(118, 117, 137) 0%, rgb(14 14 20 / 15%) 0%, rgba(25, 25, 75, 0.4) 64%);
   position: absolute;
   top: 0;
-  // pointer-events: none;
+  pointer-events: none;
 }
 

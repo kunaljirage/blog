@@ -18,7 +18,7 @@ const Home = () => (
         </div>
       </div>
     </div>
-    <div className="content-wrapper w-[964px] mx-auto">
+    <div className="content-wrapper w-[1124px] mx-auto">
       <div className="flex justify-between p-8">
         <div className="h-4/6">
           <Link className="mr-8 cursor-pointer text-gray-600" to="/posts">
@@ -32,7 +32,7 @@ const Home = () => (
           <IoSearchOutline size={25} />
         </div>
       </div>
-      <div className="flex flex-wrap gap-8">
+      <div className="flex flex-wrap gap-8 bg-[#f7f9fa] px-20 py-10">
         <PostCard />
         <PostCard />
         <PostCard />
