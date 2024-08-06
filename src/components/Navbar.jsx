@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/dark_logo.png';
 import Profile from './Profile';
+import { useAuth } from '../hooks/useAuth';
 
-const Navbar = ({ user }) => {
+const Navbar = () => {
+  const { auth, user } = useAuth();
   const buttonOptions = user
     ? { text: 'Logout', url: 'user/logout' }
     : { text: 'Log in / Sign up', url: '/login' };
-
   return (
     <nav className="navbar">
       <div className="navbar_container">
@@ -20,6 +21,11 @@ const Navbar = ({ user }) => {
           <Link className="nav-link" to="/contact">
             <h6> Contact </h6>
           </Link>
+          {auth && (
+            <Link className="nav-link" to="/write">
+              <h6> Write </h6>
+            </Link>
+          )}
           <Profile classes="cursor-pointer" source={user?.source} />
           <Link to="login">
             <button className="border border-[#5A659F] px-4 py-2 text-[16px] text-[#5A659F]">
