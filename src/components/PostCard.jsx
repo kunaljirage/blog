@@ -3,7 +3,7 @@ import Profile from './Profile';
 import { FaRegHeart } from 'react-icons/fa';
 
 const PostCard = () => (
-  <div className="flex bg-[rgb(255 255 255)] flex-col w-[300px] mb-3 hover:shadow-2xl border-2">
+  <div className="flex bg-[#ffffff] flex-col w-[300px] mb-3 rounded-sm hover:shadow-2xl">
     <div>
       <img
         src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png"

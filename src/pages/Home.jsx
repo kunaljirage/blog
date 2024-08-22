@@ -32,7 +32,7 @@ const Home = () => (
           <IoSearchOutline size={25} />
         </div>
       </div>
-      <div className="flex flex-wrap gap-8 bg-[#f7f9fa] px-20 py-10">
+      <div className="flex flex-wrap gap-8 bg-[#EDEDED] px-20 py-10">
         <PostCard />
         <PostCard />
         <PostCard />
