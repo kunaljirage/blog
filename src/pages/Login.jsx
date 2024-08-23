@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { authRequest } from '../helpers/authInstance';
 
 const Login = () => {
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [message, setMessage] = useState({ text: '', type: null });
   const navigate = useNavigate();
   const {
     register,
@@ -15,15 +15,16 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = data => {
-    authRequest('/signin', { user: { ...data } }).then(res => {
-      if (res.data) {
+    authRequest('/login', { user: { ...data } }).then(res => {
+      if (res.message) {
+        setMessage({ text: res.message, type: null });
         navigate('/');
       } else {
-        setErrorMessage(res.message);
-        setTimeout(() => {
-          setErrorMessage(null);
-        }, 5000);
+        setMessage({ text: res.data, type: 'error' });
       }
+      setTimeout(() => {
+        setMessage({ text: '', type: null });
+      }, 2000);
     });
   };
   return (
@@ -31,7 +32,11 @@ const Login = () => {
       <img className="logo" src={Logo} alt="" />
       <div className="auth">
         <h1>Login</h1>
-        <p>{errorMessage}</p>
+        <p
+          className={`${message.type ? 'text-[#F55A5A]' : 'text-[#30c060]'} mx-[30px]`}
+        >
+          {message.text}
+        </p>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <input
             {...register('email', {
@@ -51,9 +56,7 @@ const Login = () => {
             type="password"
             placeholder="Password"
           />
-          <p>
-            {errors.password?.message} {errorMessage && errorMessage}
-          </p>
+          <p>{errors.password?.message}</p>
           <Button className="btn-primary p-2" text="Login now" type="submit" />
           <p style={{ display: 'none' }}>This is an error!</p>
           <span className="mt-3">
