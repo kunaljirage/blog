@@ -8,7 +8,7 @@ import { authRequest } from '../helpers/authInstance';
 
 const Register = () => {
   const navigate = useNavigate();
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [message, setMessage] = useState({ text: '', type: null });
   const {
     register,
     handleSubmit,
@@ -18,13 +18,14 @@ const Register = () => {
   const onSubmit = data =>
     authRequest('/signup', { user: { ...data } }).then(res => {
       if (res.data) {
+        setMessage({ text: res.message, type: null });
         navigate('/');
       } else {
-        setErrorMessage(res.message);
-        setTimeout(() => {
-          setErrorMessage(null);
-        }, 5000);
+        setMessage({ text: res.data, type: 'error' });
       }
+      setTimeout(() => {
+        setMessage({ text: '', type: null });
+      }, 5000);
     });
 
   return (
@@ -32,6 +33,11 @@ const Register = () => {
       <img className="logo" src={Logo} alt="" />
       <div className="auth">
         <h1>Sign up</h1>
+        <p
+          className={`${message.type ? 'text-[#F55A5A]' : 'text-[#30c060]'} mx-[30px]`}
+        >
+          {message.text}
+        </p>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <input
             {...register('name', {
@@ -65,9 +71,7 @@ const Register = () => {
             type="password"
             placeholder="Password"
           />
-          <p>
-            {errors.password?.message} {errorMessage && errorMessage}
-          </p>
+          <p>{errors.password?.message}</p>
           <Button
             className="button btn-primary p-2 mb-3"
             text=" Sign up"
