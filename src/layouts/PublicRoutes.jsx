@@ -12,12 +12,12 @@ const PublicRoutes = () => {
   }, [pathname]);
 
   return (
-    <div className="app mt-[63px]">
+    <>
       <Navbar />
       <Notification />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 

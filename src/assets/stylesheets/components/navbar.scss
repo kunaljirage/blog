@@ -1,9 +1,8 @@
 .navbar {
-    width: 100%;
+    position: sticky;
+    top: 0;
     background-color: $lightGray;
     border-bottom: 1px solid #cdcdcd;
-    position: fixed;
-    top: 0;
     z-index: 999;
     height: 65px;
 

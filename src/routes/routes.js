@@ -1,5 +1,4 @@
 import Home from '../pages/Home';
-import Posts from '../pages/Posts';
 import Post from '../pages/Post';
 import Write from '../pages/Write';
 import Contact from '../pages/Contact';
@@ -17,10 +16,6 @@ export const publicRoutes = [
   {
     path: '/contact',
     component: Contact,
-  },
-  {
-    path: '/posts',
-    component: Posts,
   },
   {
     path: '/post/:id',

@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom';
 import Logo from '../assets/images/dark_logo.png';
 import Profile from './Profile';
 import { useAuth } from '../hooks/useAuth';
+import { useState } from 'react';
+import ProfileCard from './ProfileCard';
 
 const Navbar = () => {
+  const [showProfile, setShowProfile] = useState(false);
   const { auth, user } = useAuth();
   const buttonOptions = user
     ? { text: 'Logout', url: 'user/logout' }
@@ -15,23 +18,34 @@ const Navbar = () => {
           <img src={Logo} alt="Logo" />
         </div>
         <div className="flex align-middle justify-center gap-4">
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
           <Link className="nav-link" to="/subscribe">
             <h6> Subscribe </h6>
           </Link>
           <Link className="nav-link" to="/contact">
             <h6> Contact </h6>
           </Link>
-          {auth && (
-            <Link className="nav-link" to="/write">
-              <h6> Write </h6>
+          {auth ? (
+            <>
+              <Link className="nav-link" to="/write">
+                <h6> Write </h6>
+              </Link>
+              <Profile
+                classes="cursor-pointer"
+                source={user?.source}
+                setShowProfile={setShowProfile}
+              />
+              <ProfileCard />
+            </>
+          ) : (
+            <Link to="login">
+              <button className="border border-[#5A659F] px-4 py-2 text-[16px] text-[#5A659F]">
+                {buttonOptions.text}
+              </button>
             </Link>
           )}
-          <Profile classes="cursor-pointer" source={user?.source} />
-          <Link to="login">
-            <button className="border border-[#5A659F] px-4 py-2 text-[16px] text-[#5A659F]">
-              {buttonOptions.text}
-            </button>
-          </Link>
         </div>
       </div>
     </nav>
