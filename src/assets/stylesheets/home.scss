@@ -1,52 +1,5 @@
-.posts {
-        column-gap: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 40px 40px 0px;
-
-        .post {
-            border: 1px solid #cdcdcd;
-            border-radius: 16px;
-            display: grid;
-            grid-row: span 6;
-            grid-template-rows: subgrid;
-            padding: 32px;
-            margin-bottom: 40px;
-
-
-            header {
-                .title {
-                    align-self: center;
-                    font-size: 1.75rem;
-                    font-weight: 400;
-                    margin-bottom: 2.25rem;
-                    margin-top: 1.5rem;
-                }
-
-                .date-author {
-                    column-gap: 1.5rem;
-                    align-content: flex-start;
-                    align-items: center;
-                    display: flex;
-                    flex-wrap: wrap;
-
-                    .author{
-                        color: #0069c2;
-
-                        .default-profile {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 48px;
-                            width: 48px;
-                            border-radius: 50%;
-                            background-color: lightGray;
-                            color: #fff;
-                          
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+.hero-section {
+  background: url("../images/home-background4.jpg") fixed;
+  background-size: cover;
+  height: calc(100vh - 63px);
+}

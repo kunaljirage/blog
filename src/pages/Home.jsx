@@ -3,42 +3,43 @@ import PostCard from '../components/PostCard';
 import { Link } from 'react-router-dom';
 
 const Home = () => (
-  <div className="bg-[rgb(255 255 255)]">
-    <div className="dashboard">
-      <div className="dashboard-overlay">
-        <div className="flex flex-col justify-center items-center min-h-[80%]">
-          <h4 className="text-white mb-3 text-[25px] uppercase">
-            how to become an amazing designer and developer
-          </h4>
-          <div className="w-[70%] text-center">
-            <h1 className="text-white text-[50px] uppercase">
-              Thriving Industry of User Experience Design and Development
-            </h1>
-          </div>
-        </div>
+  <div>
+    <header className="hero-section bg-gray-900 text-white py-16">
+      <div className="flex flex-col justify-center items-center min-h-[80%] text-center">
+        <h4 className="text-lg mb-3 uppercase">
+          How to Become an Amazing Designer and Developer
+        </h4>
+        <h1 className="text-4xl uppercase">
+          Thriving Industry of User Experience Design and Development
+        </h1>
       </div>
-    </div>
-    <div className="content-wrapper w-[1124px] mx-auto">
-      <div className="flex justify-between p-8">
-        <div className="h-4/6">
-          <Link className="mr-8 cursor-pointer text-gray-600" to="/posts">
+    </header>
+    <main className="container mx-auto px-12">
+      <nav className="flex justify-between items-center py-4 border-b border-gray-300">
+        <div className="flex space-x-8">
+          <Link className="text-gray-600 hover:text-gray-900" to="/posts">
             All Posts
           </Link>
-          <span className="mr-8 cursor-pointer text-gray-600">Web Design</span>
-          <span className="mr-8 cursor-pointer text-gray-600">UX / UI</span>
-          <span className="mr-8 cursor-pointer text-gray-600">Devops</span>
+          <span className="text-gray-600 hover:text-gray-900">Web Design</span>
+          <span className="text-gray-600 hover:text-gray-900">UX / UI</span>
+          <span className="text-gray-600 hover:text-gray-900">DevOps</span>
         </div>
         <div>
-          <IoSearchOutline size={25} />
+          <IoSearchOutline
+            size={25}
+            className="text-gray-600 hover:text-gray-900"
+          />
         </div>
-      </div>
-      <div className="flex flex-wrap gap-8 bg-[#EDEDED] px-20 py-10">
-        <PostCard />
-        <PostCard />
-        <PostCard />
-        <PostCard />
-      </div>
-    </div>
+      </nav>
+      <section className="posts-section bg-gray-200 pt-10 px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <PostCard />
+          <PostCard />
+          <PostCard />
+          <PostCard />
+        </div>
+      </section>
+    </main>
   </div>
 );
 

@@ -3,47 +3,45 @@ import Profile from './Profile';
 import { FaRegHeart } from 'react-icons/fa';
 
 const PostCard = () => (
-  <div className="flex bg-[#ffffff] flex-col w-[300px] mb-3 rounded-sm hover:shadow-2xl">
-    <div>
+  <div className="justify-self-center bg-white w-[300px] mb-10 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+    <div className="flex justify-center">
       <img
         src="https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png"
-        className="object-contain aspect-[3/2] object-top"
+        alt="Post Thumbnail"
+        className="h-[250px] object-cover rounded-t-lg"
       />
     </div>
-    <div className="p-3 flex flex-col gap-2">
-      <div className="flex">
+    <div className="p-4">
+      <div className="flex items-center space-x-4 mb-3">
         <Profile />
-        <div className="ml-4">
-          <div>Admin</div>
-          <div>Mar 21, 20232 min</div>
+        <div>
+          <div className="text-sm font-semibold">Admin</div>
+          <div className="text-xs text-gray-500">Mar 21, 2023 • 2 min read</div>
         </div>
       </div>
-      <div className="border-b-2 pb-[2px]">
+      <div className="border-b border-gray-300 pb-2 mb-2">
         <Link
           to="post/1"
-          className="text-2xl font-semibold overflow-hidden text-ellipsis line-clamp-3 mb-2"
+          className="block text-xl font-semibold text-gray-800 hover:text-gray-600 truncate"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Link>
-        <Link
-          to="post/1"
-          className="max-h-[200px] overflow-hidden text-ellipsis line-clamp-4"
-        >
+        <p className="text-gray-700 text-sm line-clamp-4">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
           five centuries, but also the leap into electronic typesetting,
           remaining essentially unchanged.
-        </Link>
+        </p>
       </div>
-      <div className="flex justify-between mx-2 items-center">
-        <div>
-          <span className="mr-5">
-            <span>0</span> views
+      <div className="flex justify-between items-center text-sm text-gray-600">
+        <div className="space-x-4">
+          <span>
+            <span className="font-semibold">0</span> views
           </span>
           <span>
-            <sapan>0</sapan> comments
+            <span className="font-semibold">0</span> comments
           </span>
         </div>
         <div>
